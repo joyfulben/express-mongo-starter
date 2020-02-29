@@ -12,10 +12,9 @@
         <li class="w-25">
           <h5>Plant Name: <%=plants[i].name%></h5>
           <img class="w-100" src="<%=plants[i].img%>" alt="">
-          <p class="hidden">Description: <%=plants[i].description%></p>
           <p >Location seen: <%=plants[i].location%></p>
-          <p class="hidden">Time of entry: <%=plants[i].createdAt%></p>
-          <%- include ('../partials/js/show_hidden.ejs') %>
+          <button><a href="/plants/<%=plants[i].id%>/edit">Edit Entry</a></button>
+
         </li>
       </ul>
     <% } %>

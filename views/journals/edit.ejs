@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  <%- include ('../partials/css/head.ejs') %>
+  </head>
+  <body>
+    <nav>
+      <%- include ('../partials/css/nav.ejs') %>
+    </nav>
+    <h2>Edit Plant Journal Entry</h2>
+    <form class="" action="/plants/<%=plant.id%>?_method=PUT" method="POST">
+      Name: <input type="text" name="name" value="<%=plant.name%>"/><br/>
+      <p>Description: <textarea name="description"><%=plant.description%></textarea></p><br/>
+      Location spotted: <input type="text" name="location" value="<%=plant.location%>"/><br/>
+      <input type="submit" name="" value="Update Entry">
+
+    </form>
+  </body>
+</html>

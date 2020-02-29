@@ -14,6 +14,21 @@ plants.get('/new', isAuthenticated, (req, res) => {
     currentUser: req.session.currentUser
   })
 })
+//Edit
+plants.get('/:id/edit', isAuthenticated, (req, res) => {
+  Plant.findById(req.params.id, (err, foundPlant) => {
+    res.render('journals/edit.ejs', {
+      plant: foundPlant,
+      currentUser: req.session.currentUser
+    })
+  })
+})
+//Update
+plants.put('/:id', isAuthenticated, (req, res) => {
+  Plant.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedEntry) => {
+    res.redirect('/plants')
+  })
+})
 //Create
 plants.post('/', isAuthenticated, (req, res) => {
   Plant.create(req.body, (err, createdEntry) => {
@@ -25,7 +40,7 @@ plants.get('/', (req, res) => {
   Plant.find({}, (err, allPlants) => {
     if (err) {
       res.send('There was a problem getting the information')
-    } else if (allPlants.length < 2) {
+    } else if (allPlants.length < 3) {
       Plant.create([
         {
         name: "Raspberry",
