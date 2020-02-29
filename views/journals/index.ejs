@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <%- include ('../partials/css/main.ejs') %>
     <%- include ('../partials/css/head.ejs') %>
   </head>
   <body>
@@ -8,12 +9,13 @@
     <a href="/plants/new">Add a new plant entry</a>
     <% for (let i = 0; i < plants.length; i++) { %>
       <ul>
-        <li>
+        <li class="w-25">
           <h5>Plant Name: <%=plants[i].name%></h5>
-          <img src="<%=plants[i].img%>" alt="">
-          <p>Description: <%=plants[i].description%></p>
-          <p>Location seen: <%=plants[i].location%></p>
-          <p>Time of entry: <%=plants[i].createdAt%></p>
+          <img class="w-100" src="<%=plants[i].img%>" alt="">
+          <p class="hidden">Description: <%=plants[i].description%></p>
+          <p >Location seen: <%=plants[i].location%></p>
+          <p class="hidden">Time of entry: <%=plants[i].createdAt%></p>
+          <%- include ('../partials/js/show_hidden.ejs') %>
         </li>
       </ul>
     <% } %>
