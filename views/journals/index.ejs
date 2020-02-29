@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/css/head.ejs') %>
+  </head>
+  <body>
+    <%- include ('../partials/css/nav.ejs') %>
+    <a href="/plants/new">Add a new plant entry</a>
+    <% for (let i = 0; i < plants.length; i++) { %>
+      <ul>
+        <li>
+          <h5>Plant Name: <%=plants[i].name%></h5>
+          <img src="<%=plants[i].img%>" alt="">
+          <p>Description: <%=plants[i].description%></p>
+          <p>Location seen: <%=plants[i].location%></p>
+          <p>Time of entry: <%=plants[i].createdAt%></p>
+        </li>
+      </ul>
+    <% } %>
+  </body>
+</html>
