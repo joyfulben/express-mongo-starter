@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
   <%- include ('../partials/css/head.ejs') %>
+  <%- include ('../partials/css/main.ejs') %>
   </head>
   <body>
     <nav>
@@ -10,6 +11,7 @@
     <h2>Edit Plant Journal Entry</h2>
     <form class="" action="/plants/<%=plant.id%>?_method=PUT" method="POST">
       Name: <input type="text" name="name" value="<%=plant.name%>"/><br/>
+      <img class="w-50  rounded-left" src="<%=plant.img%>" alt="">
       <p>Description: <textarea name="description"><%=plant.description%></textarea></p><br/>
       Location spotted: <input type="text" name="location" value="<%=plant.location%>"/><br/>
       <input type="submit" name="" value="Update Entry">

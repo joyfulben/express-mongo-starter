@@ -7,16 +7,21 @@
   <body>
     <%- include ('../partials/css/nav.ejs') %>
     <a href="/plants/new">Add a new plant entry</a>
-    <% for (let i = 0; i < plants.length; i++) { %>
-      <ul>
+
+      <ul class="d-flex">
+        <% for (let i = 0; i < plants.length; i++) { %>
         <li class="w-25">
           <h5>Plant Name: <%=plants[i].name%></h5>
-          <img class="w-100" src="<%=plants[i].img%>" alt="">
+          <div class="image">
+            <div class="plant-pic">
+              <img class= "w-100" src="<%=plants[i].img%>" alt="">
+            </div>
+          </div>
           <p >Location seen: <%=plants[i].location%></p>
-          <button><a href="/plants/<%=plants[i].id%>/edit">Edit Entry</a></button>
-
+          <a href="/plants/<%=plants[i].id%>/edit"><button>Edit Entry</button></a>
         </li>
+          <% } %>
       </ul>
-    <% } %>
+
   </body>
 </html>
