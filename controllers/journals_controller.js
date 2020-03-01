@@ -23,6 +23,27 @@ plants.get('/:id/edit', isAuthenticated, (req, res) => {
     })
   })
 })
+//Show
+plants.get('/:id', (req, res) => {
+  if (req.session.currentUser) {
+    Plant.findById(req.params.id, (err, foundPlant) => {
+      res.render('journals/show.ejs', {
+        plant: foundPlant,
+        currentUser: req.session.currentUser
+      })
+    })
+  } else {
+    res.redirect('/sessions/new')
+  }
+})
+
+//Delete
+plants.delete('/:id', isAuthenticated, (req, res) => {
+  Plant.findByIdAndRemove(req.params.id, (err, deletedPlant) => {
+    res.redirect('/plants')
+  })
+})
+
 //Update
 plants.put('/:id', isAuthenticated, (req, res) => {
   Plant.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedEntry) => {

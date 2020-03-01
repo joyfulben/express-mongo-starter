@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <%- include ('partials/css/head.ejs')%>
-        <%- include ('partials/css/main.ejs') %>
+    <%- include ('../partials/css/head.ejs')%>
+        <%- include ('../partials/css/main.ejs') %>
       <title><%=plant.name%></title>
   </head>
   <body>
     <nav>
-        <%- include ('partials/css/nav.ejs') %>
+        <%- include ('../partials/css/nav.ejs') %>
       </nav>
-      <div class="show-plant">
-        Name: <%=plant.name%><br/>
-        <img src="<%plant.img%>" alt=""><br/>
-        Description: <%plant.description%><br/>
-        Location spotted: <%plant.location%><br/>
-        Time of Entry: <%plant.createdAt%>
+      <div class="show-plant d-flex flex-column">
+        <h3>Name: <%=plant.name%></h3><br/>
+        <img class="w-50 h-25" src="<%=plant.img%>" alt=""><br/>
+        Description: <%=plant.description%><br/>
+        Location spotted: <%=plant.location%><br/>
+        Time of Entry: <%=plant.createdAt%>
       </div>
   </body>
 </html>
