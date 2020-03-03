@@ -9,13 +9,25 @@
       <%- include ('../partials/css/nav.ejs') %>
     </nav>
     <h2>Edit Plant Journal Entry</h2>
-    <form class="" action="/plants/<%=plant.id%>?_method=PUT" method="POST">
-      Name: <input type="text" name="name" value="<%=plant.name%>"/><br/>
-      <img class="w-50  rounded-left" src="<%=plant.img%>" alt="">
-      <p>Description: <textarea name="description"><%=plant.description%></textarea></p><br/>
-      Location spotted: <input type="text" name="location" value="<%=plant.location%>"/><br/>
-      <input type="submit" name="" value="Update Entry">
+    <form action="/plants/<%=plant.id%>?_method=PUT" method="POST">
+      <div class="d-flex">
+        <div class=" d-flex flex-column">
+          <div class="align-self-center">
+            Name: <input type="text" name="name" value="<%=plant.name%>"/>
+          </div>
+          <br/>
 
+          <p class="align-self-start d-flex flex-column">Description:
+            <textarea name="description" rows="5" cols="36"><%=plant.description%></textarea></p><br/>
+            <div class="align-self-center">
+              Location spotted: <input type="text" name="location" value="<%=plant.location%>"/><br/>
+              <input type="submit" name="" value="Update Entry">
+            </div>
+        </div>
+        <div class="edit-pic">
+          <img class="w-75 h-75" src="<%=plant.img%>" alt="">
+        </div>
+      </div>
     </form>
   </body>
 </html>

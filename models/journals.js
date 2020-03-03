@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const journalSchema = new mongoose.Schema ({
+const journalSchema = mongoose.Schema ({
   name: {type: String, required: true},
   description: {type: String, required: true},
   img: String,

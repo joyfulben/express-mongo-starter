@@ -52,6 +52,7 @@ plants.put('/:id', isAuthenticated, (req, res) => {
 })
 //Create
 plants.post('/', isAuthenticated, (req, res) => {
+
   Plant.create(req.body, (err, createdEntry) => {
     res.redirect('/plants')
   })
@@ -59,6 +60,7 @@ plants.post('/', isAuthenticated, (req, res) => {
 //Index
 plants.get('/', (req, res) => {
   Plant.find({}, (err, allPlants) => {
+    console.log(allPlants);
     if (err) {
       res.send('There was a problem getting the information')
     } else if (allPlants.length < 3) {
@@ -83,6 +85,7 @@ plants.get('/', (req, res) => {
         }
       ])
     } else {
+
       res.render('journals/index.ejs', {
         plants: allPlants,
         currentUser: req.session.currentUser

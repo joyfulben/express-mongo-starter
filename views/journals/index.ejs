@@ -8,20 +8,19 @@
     <%- include ('../partials/css/nav.ejs') %>
     <a href="/plants/new">Add a new plant entry</a>
 
-      <ul class="d-flex">
+      <ul class="d-flex justify-content-center flex-wrap">
         <% for (let i = 0; i < plants.length; i++) { %>
-        <li class="w-25 ">
+        <li class="">
           <a href="/plants/<%=plants[i].id;%>" class="index-li-item">
             <h5><%=plants[i].name%></h5>
             <div class="plant-pic">
               <img class= "w-100" src="<%=plants[i].img%>" alt="">
             </div>
           </a>
-          <p>Found in: <%=plants[i].location%></p>
-          <a href="/plants/<%=plants[i].id%>/edit"><button>Edit Entry</button></a>
-          <form action="/plants/<%=plants[i].id;%>?_method=DELETE" method="POST">
-            <input class="text-danger" type="submit" value="DELETE"/>
-          </form>
+          <div class="location">
+            <p>Found in: <%=plants[i].location%></p>
+          </div>
+            <a href="/plants/<%=plants[i].id%>/edit"><button type="button" class="btn btn-success bounceOut" id="edit-btn">Edit Entry</button></a>
         </li>
           <% } %>
       </ul>
