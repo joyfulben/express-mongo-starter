@@ -37,7 +37,7 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 
  // PUT and DELETE from a form
 app.use(session({
-  secret: "something",
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false
 }))
