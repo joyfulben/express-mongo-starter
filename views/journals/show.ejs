@@ -12,9 +12,11 @@
       <div class="show-plant d-flex flex-column">
         <h3>Name: <%=plant.name%></h3><br/>
         <img class="w-50 h-25" src="<%=plant.img%>" alt=""><br/>
-        Description: <%=plant.description%><br/>
-        Location spotted: <%=plant.location%><br/>
-        Time of Entry: <%=plant.createdAt%>
+        <div>
+          <h5>Description: <%=plant.description%></h5><br/>
+          <h4>Location spotted: <%=plant.location%></h4><br/>
+          Time of Entry: <%=plant.createdAt%>
+        </div>
       </div>
       <div class="d-flex justify-content-around m-4">
         <a href="/plants/<%=plant.id%>/edit"><button type="button" class="btn btn-success" id="edit-btn">Edit Entry</button></a>

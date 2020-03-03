@@ -1,7 +1,8 @@
 const bcrypt = require('bcrypt')
 const express = require('express')
 const users = express.Router()
-const User = require('../models/users.js')
+const User = require('../models/user.js')
+const Author = require('../models/author.js')
 
 //show sign up form
 users.get('/new', (req, res) => {
@@ -10,9 +11,12 @@ users.get('/new', (req, res) => {
 
 // create new user
 users.post('/', (req, res) => {
-  req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
-  User.create(req.body, (err, createdUser) => {
-    console.log('user is created', createdUser)
+  req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+  Author.create({userName: req.body.username, authorName: req.body.author}, (err, createdAuthor) => {
+    console.log('author is created', createdAuthor);
+  });
+  Author.find({}, req.body, (err, foundAuthor) => {
+    console.log('found you...', foundAuthor)
     res.redirect('/')
   })
 })

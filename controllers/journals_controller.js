@@ -1,5 +1,5 @@
 const express = require('express')
-const Plant = require('../models/journals.js');
+const Plant = require('../models/journal.js');
 const plants = express.Router();
 const isAuthenticated = (req, res, next) => {
   if (req.session.currentUser) {
@@ -60,7 +60,6 @@ plants.post('/', isAuthenticated, (req, res) => {
 //Index
 plants.get('/', (req, res) => {
   Plant.find({}, (err, allPlants) => {
-    console.log(allPlants);
     if (err) {
       res.send('There was a problem getting the information')
     } else if (allPlants.length < 3) {
