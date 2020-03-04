@@ -52,7 +52,6 @@ plants.put('/:id', isAuthenticated, (req, res) => {
 })
 //Create
 plants.post('/', isAuthenticated, (req, res) => {
-
   Plant.create(req.body, (err, createdEntry) => {
     res.redirect('/plants')
   })
@@ -84,7 +83,6 @@ plants.get('/', (req, res) => {
         }
       ])
     } else {
-
       res.render('journals/index.ejs', {
         plants: allPlants,
         currentUser: req.session.currentUser
