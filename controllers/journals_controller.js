@@ -25,8 +25,10 @@ plants.get('/:id/edit', isAuthenticated, (req, res) => {
 })
 //Show
 plants.get('/:id', (req, res) => {
+  console.log(req.session.currentUser);
   if (req.session.currentUser) {
     Plant.findById(req.params.id, (err, foundPlant) => {
+      console.log(foundPlant);
       res.render('journals/show.ejs', {
         plant: foundPlant,
         currentUser: req.session.currentUser

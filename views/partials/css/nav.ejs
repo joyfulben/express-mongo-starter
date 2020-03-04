@@ -1,11 +1,10 @@
 <%- include ('nav-css.ejs') %>
-<<<<<<< HEAD
 <div class ="nav row d-flex justify-content-around">
   <a href="/plants" class="col-2 home">My Plant Journal</a>
   <ul class="col-6 row d-flex justify-content-end mt-3">
     <% if (currentUser) { %>
-    <div class="wel">
-      <li class ="welcome col-6 badge badge-pill">Welcome <%= currentUser.username %></li>
+    <div class="wel col-6">
+      <li class ="welcome badge">Welcome <%= currentUser.username %></li>
     </div>
     <li class= "col-4">
       <form action="/sessions?_method=DELETE" method="POST">
@@ -17,22 +16,4 @@
     <li class ="col-2"><a class="btn btn-primary" href="/sessions/new">Log In</a></li>
     <% } %>
   </ul>
-=======
-<div class ="row .p-0 .m-0">
-<a href="/plants" class="col-3 home">My Plant Journal</a>
-<ul class="col-9 row justify-content-end">
-  <% if (currentUser) { %>
-
-  <li class ="col-4 ">Welcome <%= currentUser.username %></li>
-  <li class= "col-2">
-    <form action="/sessions?_method=DELETE" method="POST">
-      <input type="submit" value="Log Out" class="btn-small red" />
-    </form>
-  </li>
-  <% } else { %>
-  <li class ="col-3"><a href="/users/new">Sign Up</a></li>
-  <li class ="col-3"><a href="/sessions/new">Log In</a></li>
-  <% } %>
-</ul>
->>>>>>> parent of b4f48c0... styling nav bar and adding animation to edit button
 </div>

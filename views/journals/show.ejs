@@ -6,16 +6,15 @@
       <title><%=plant.name%></title>
   </head>
   <body>
-    <nav>
         <%- include ('../partials/css/nav.ejs') %>
-      </nav>
+
       <div class="show-plant d-flex flex-column">
         <h3>Name: <%=plant.name%></h3><br/>
         <img class="w-50 h-25" src="<%=plant.img%>" alt=""><br/>
         <div>
           <h5>Description: <%=plant.description%></h5><br/>
           <h4>Location spotted: <%=plant.location%></h4><br/>
-          Time of Entry: <%=plant.createdAt%>
+          <h6>Time of Entry: <%=plant.createdAt%></h6>
         </div>
       </div>
   </body>
