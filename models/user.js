@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
-const Author = require('./author.js')
 const Schema = mongoose.Schema;
 
 
 
 const userSchema = new Schema({
   password: String,
-  name: [{type: mongoose.Schema.Types.ObjectId, ref: 'Author'}]
+  name: {type: String, required: true},
+  userName: {type:String, required: true, unique: true}
 })
 
 const User = mongoose.model('User', userSchema)

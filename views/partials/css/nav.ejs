@@ -1,7 +1,7 @@
 <%- include ('nav-css.ejs') %>
 <div class ="nav row d-flex justify-content-around">
   <a href="/plants" class="col-2 home">My Plant Journal</a>
-  <ul class="col-8 row d-flex justify-content-between mt-3">
+  <ul class="col-6 row d-flex justify-content-end mt-3">
     <% if (currentUser) { %>
     <div class="wel">
       <li class ="welcome col-6 badge badge-pill">Welcome <%= currentUser.username %></li>
@@ -12,8 +12,8 @@
       </form>
     </li>
     <% } else { %>
-    <li class ="col-6"><a href="/users/new">Sign Up</a></li>
-    <li class ="col-4"><a href="/sessions/new">Log In</a></li>
+    <li class ="col-2"><a class="btn btn-primary" href="/users/new">Sign Up</a></li>
+    <li class ="col-2"><a class="btn btn-primary" href="/sessions/new">Log In</a></li>
     <% } %>
   </ul>
 </div>

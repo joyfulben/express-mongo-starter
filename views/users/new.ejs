@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <%- include ('../partials/css/head.ejs') %>
+    <%- include ('../partials/css/main.ejs') %>
   </head>
   <body>
     <nav>
@@ -9,12 +10,12 @@
     </nav>
     <div class="container">
       <h1>New User</h1>
-      <form action="/users" method="POST">
-        <label for="username">User Name:</label>
-        <input type="text" name="username" required/>
-        <label for="author">Author's Name:</label>
-        <input type="text" name="author" required/>
-        <label for="color">Password:</label>
+      <form class="d-flex flex-column w-25 m-auto" action="/users" method="POST">
+        <label for="userName">User Name:</label>
+        <input type="text" name="userName" required/>
+        <label for="name">Forager's Name:</label>
+        <input type="text" name="name" required/>
+        <label for="password">Password:</label>
         <input type="password" name="password" />
         <br>
         <input type="submit" value="Submit">
