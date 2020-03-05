@@ -2,15 +2,16 @@
 <html lang="en" dir="ltr">
   <head>
   <%- include ('../partials/css/head.ejs') %>
+  <%- include ('../partials/css/main.ejs') %>
   </head>
   <body>
     <nav>
       <%- include ('../partials/css/nav.ejs') %>
     </nav>
     <h2>New Plant Journal Entry</h2>
-    <form action="/plants" method="POST">
+    <form class="d-flex flex-column w-50 m-auto" action="/plants" method="POST">
       Name: <input type="text" name="name"/><br/>
-      Entry: <textarea name="description" rows="8" cols="80"></textarea>
+      Entry: <textarea name="description" rows="5" cols="40"></textarea>
       Image: <input type="text" name="img" placeholder="image URL">
       Location: <input type="text" name="location" placeholder="place where seen">
       <input type="submit" name="" value="Add plant">
